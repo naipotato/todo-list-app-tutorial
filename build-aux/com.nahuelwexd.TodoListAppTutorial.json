@@ -1,0 +1,51 @@
+{
+    "app-id": "com.nahuelwexd.TodoListAppTutorial",
+
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "42",
+    "sdk": "org.gnome.Sdk",
+
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+
+    "command": "todo-list-app-tutorial",
+
+    "build-options": {
+        "append-path": "/usr/lib/sdk/vala/bin",
+        "append-ld-library-path": "/usr/lib/sdk/vala/lib"
+    },
+
+    "finish-args": [
+        "--share=ipc",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--device=dri"
+    ],
+
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+
+    "modules": [
+        {
+            "name": "todo-list-app-tutorial",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": ".."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+
+<template class="GtkListItem">
+  <property name="child">
+    <object class="GtkBox">
+      <property name="orientation">vertical</property>
+
+      <style>
+        <class name="tla-task-row" />
+      </style>
+
+      <child>
+        <object class="GtkLabel">
+          <property name="xalign">0</property>
+
+          <binding name="label">
+            <lookup name="name" type="TlaTask">
+              <lookup name="item">GtkListItem</lookup>
+            </lookup>
+          </binding>
+
+          <style>
+            <class name="tla-title-task" />
+          </style>
+
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkLabel">
+          <property name="xalign">0</property>
+
+          <binding name="label">
+            <lookup name="detail" type="TlaTask">
+              <lookup name="item">GtkListItem</lookup>
+            </lookup>
+          </binding>
+
+          <style>
+            <class name="dim-label" />
+            <class name="tla-detail-task" />
+          </style>
+
+        </object>
+      </child>
+
+    </object>
+  </property>
+</template>
+
+</interface>

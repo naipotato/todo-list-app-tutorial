@@ -1,0 +1,12 @@
+{
+    "mesonbuild.buildFolder": "_build",
+    "files.associations": {
+        "*.ui": "xml",
+    },
+    "files.watcherExclude": {
+        "**/.dart_tool": true,
+        ".flatpak/**": true,
+        "_build/**": true
+    },
+    "vala.languageServerPath": "/var/home/nahuelwexd/Proyectos/todo-list-app-tutorial/.flatpak/vala-language-server.sh"
+}

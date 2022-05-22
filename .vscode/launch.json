@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "gdb",
+            "request": "launch",
+            "preLaunchTask": "Build",
+            "gdbpath": "${workspaceRoot}/gdb.sh",
+            "target": "${workspaceRoot}/.flatpak/repo/files/bin/todo-list-app-tutorial",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

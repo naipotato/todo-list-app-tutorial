@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+
+<gresource prefix="/com/nahuelwexd/TodoListAppTutorial">
+  <file>MainWindow.ui</file>
+  <file>TaskRow.ui</file>
+  <file>style.css</file>
+</gresource>
+
+</gresources>

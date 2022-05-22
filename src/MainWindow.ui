@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+
+<template class="TlaMainWindow" parent="AdwApplicationWindow">
+  <property name="default-width">600</property>
+  <property name="default-height">400</property>
+  <property name="title">Todo List App Tutorial</property>
+
+  <property name="content">
+    <object class="AdwLeaflet" id="_leaflet">
+      <property name="can-unfold">no</property>
+      <property name="can-navigate-back">yes</property>
+
+      <child>
+        <object class="GtkBox">
+          <property name="orientation">vertical</property>
+
+          <child>
+            <object class="GtkHeaderBar">
+
+              <property name="title-widget">
+                <object class="AdwWindowTitle">
+                  <property name="title">Todo List</property>
+                </object>
+              </property>
+
+              <child type="start">
+                <object class="GtkButton">
+                  <property name="icon-name">list-add-symbolic</property>
+                  <signal name="clicked" handler="on_add_btn_clicked" />
+                </object>
+              </child>
+        
+              <child type="end">
+                <object class="GtkMenuButton">
+                  <property name="primary">true</property>
+                  <property name="icon-name">open-menu-symbolic</property>
+                  <property name="menu-model">primary-menu</property>
+                </object>
+              </child>
+        
+            </object>
+          </child>
+
+          <child>
+            <object class="GtkScrolledWindow">
+              <property name="hscrollbar-policy">never</property>
+
+              <property name="child">
+                <object class="GtkListView">
+                  <property name="vexpand">yes</property>
+    
+                  <style>
+                    <class name="navigation-sidebar" />
+                  </style>
+    
+                  <property name="model">
+                    <object class="GtkNoSelection">
+                      <binding name="model">
+                        <lookup name="tasks" type="TlaTaskViewModel">
+                          <lookup name="view_model">TlaMainWindow</lookup>
+                        </lookup>
+                      </binding>
+                    </object>
+                  </property>
+
+                  <property name="factory">
+                    <object class="GtkBuilderListItemFactory">
+                      <property name="resource">/com/nahuelwexd/TodoListAppTutorial/TaskRow.ui</property>
+                    </object>
+                  </property>
+    
+                </object>
+              </property>
+
+            </object>
+          </child>
+
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkBox">
+          <property name="orientation">vertical</property>
+          <property name="spacing">24</property>
+
+          <child>
+            <object class="GtkHeaderBar">
+
+              <property name="title-widget">
+                <object class="AdwWindowTitle">
+                  <property name="title">Create new task</property>
+                </object>
+              </property>
+
+              <child type="start">
+                <object class="GtkButton">
+                  <property name="icon-name">go-previous-symbolic</property>
+                  <signal name="clicked" handler="on_back_btn_clicked" />
+                </object>
+              </child>
+
+              <child type="end">
+                <object class="GtkButton" id="_create_btn">
+                  <property name="label">Create</property>
+                  <property name="sensitive">no</property>
+                  <signal name="clicked" handler="on_create_btn_clicked" />
+
+                  <style>
+                    <class name="suggested-action" />
+                  </style>
+
+                </object>
+              </child>
+
+            </object>
+          </child>
+
+          <child>
+            <object class="AdwClamp">
+              <property name="child">
+                <object class="GtkListBox">
+                  <property name="selection-mode">none</property>
+    
+                  <style>
+                    <class name="boxed-list" />
+                  </style>
+    
+                  <child>
+                    <object class="AdwActionRow">
+                      <property name="title">Name</property>
+    
+                      <child>
+                        <object class="GtkEntry" id="_name_entry">
+                          <property name="valign">center</property>
+                          <signal name="changed" handler="on_text_changed" />
+                        </object>
+                      </child>
+    
+                    </object>
+                  </child>
+    
+                  <child>
+                    <object class="AdwActionRow">
+                      <property name="title">Detail</property>
+    
+                      <child>
+                        <object class="GtkEntry" id="_detail_entry">
+                          <property name="valign">center</property>
+                          <signal name="changed" handler="on_text_changed" />
+                        </object>
+                      </child>
+    
+                    </object>
+                  </child>
+    
+                </object>
+              </property>
+            </object>
+          </child>
+
+        </object>
+      </child>
+
+    </object>
+  </property>
+
+</template>
+
+<menu id="primary-menu">
+  <item>
+    <attribute name="label">About Todo List App Tutorial</attribute>
+    <attribute name="action">app.show-about</attribute>
+  </item>
+</menu>
+
+</interface>

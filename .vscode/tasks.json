@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "command": "flatpak-spawn --host flatpak build --share=network --nofilesystem=host --filesystem=/var/home/nahuelwexd/Proyectos/todo-list-app-tutorial --filesystem=/var/home/nahuelwexd/Proyectos/todo-list-app-tutorial/.flatpak/repo --env=PATH=/app/bin:/app/bin:/app/bin:/usr/bin:/var/home/nahuelwexd/.var/app/com.visualstudio.code/data/node_modules/bin:/usr/lib/sdk/vala/bin --env=LD_LIBRARY_PATH=/app/lib:/usr/lib/sdk/vala/lib --env=PKG_CONFIG_PATH=/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig --filesystem=/var/home/nahuelwexd/Proyectos/todo-list-app-tutorial/_build /var/home/nahuelwexd/Proyectos/todo-list-app-tutorial/.flatpak/repo meson install -C _build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "Build"
+        }
+    ]
+}
